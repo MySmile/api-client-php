@@ -61,14 +61,7 @@ abstract class AbstractManager implements ManagerInterface
      * 
      * @return self
      */
-    static public function getInstance()
-    {
-        if(is_null(self::$obj)) {
-            self::$obj = new self();
-        }
-        
-        return self::$obj;
-    }
+    abstract static public function getInstance();
     
     /**
      * Sets  Endpoint
@@ -123,7 +116,7 @@ abstract class AbstractManager implements ManagerInterface
         $ch = \curl_init();
         
         // set url with resourse
-        \curl_setopt($ch, CURLOPT_URL, $this->endpoint.'\\'.$resource);
+        \curl_setopt($ch, CURLOPT_URL, $this->endpoint.'/'.$resource);
 
         // set configurable curl options
         \curl_setopt_array($ch, $this->curlOptions);
@@ -133,7 +126,7 @@ abstract class AbstractManager implements ManagerInterface
         
         // get response
         $this->raw = curl_exec($ch);
-        
+                
         // handle curl errors
         if(\curl_errno($ch) !== 0) {
             throw new Exception('Curl error ['.\curl_error($ch).']', 500);

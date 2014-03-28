@@ -5,7 +5,7 @@
  * @link https://github.com/MySmile/api-client-php
  */
 
-namespace MySmile\Api\Client\Manager\Resource;
+namespace MySmile\Api\Client\Resource;
 use MySmile\Api\Client\Manager;
 
 abstract class AbstractResource  implements ResourceInterface 
@@ -27,9 +27,9 @@ abstract class AbstractResource  implements ResourceInterface
     /**
      * @param MySmile\Api\Client\Manager $manager
      */
-    public function __construct(MySmile\Api\Client\Manager $manager) 
+    public function __construct(Manager $manager) 
     {
-        $this->manger = $manager;
+        $this->manager = $manager;
     }
     
     /**
@@ -38,7 +38,7 @@ abstract class AbstractResource  implements ResourceInterface
      * @param MySmile\Api\Client\Manager $manager
      * @return self
      */
-    public function setManager(MySmile\Api\Client\Manager $manager)
+    public function setManager(Manager $manager)
     {
         $this->manager = $manager;
         

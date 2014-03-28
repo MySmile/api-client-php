@@ -6,9 +6,21 @@
  */
 
 namespace MySmile\Api\Client;
-use MySmile\Api\Client\Manager\ManagerAbstract;
+use MySmile\Api\Client\Manager\AbstractManager;
 
-class Manager extends ManagerAbstract
+class Manager extends AbstractManager
 {
-    
+    /**
+     * Gets current instance
+     * 
+     * @return self
+     */
+    static public function getInstance()
+    {
+        if(is_null(self::$obj)) {
+            self::$obj = new self();
+        }
+        
+        return self::$obj;
+    }
 }

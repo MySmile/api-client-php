@@ -5,7 +5,7 @@
  * @link https://github.com/MySmile/api-client-php
  */
 
-namespace MySmile\Api\Client\Manager\Resource;
+namespace MySmile\Api\Client\Resource;
 use MySmile\Api\Client\Manager;
 
 interface ResourceInterface  
@@ -13,7 +13,7 @@ interface ResourceInterface
     /**
      * @param MySmile\Api\Client\Manager $manager
      */
-    public function __construct(MySmile\Api\Client\Manager $manager);
+    public function __construct(Manager $manager);
     
     /**
      * Sets Manager
@@ -21,7 +21,7 @@ interface ResourceInterface
      * @param MySmile\Api\Client\Manager $manager
      * @return self
      */
-    public function setManager(MySmile\Api\Client\Manager $manager);
+    public function setManager(Manager $manager);
     
     /**
      * Gets Manager

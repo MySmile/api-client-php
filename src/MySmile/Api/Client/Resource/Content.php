@@ -5,7 +5,7 @@
  * @link https://github.com/MySmile/api-client-php
  */
 
-namespace MySmile\Api\Client\Manager\Resource;
+namespace MySmile\Api\Client\Resource;
 
 class Content extends AbstractResource 
 {

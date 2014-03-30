@@ -22,7 +22,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
      * 
      * @var string 
      */
-    protected $proxy = '127.0.0.1:8888';
+    protected $proxy = 'http://127.0.0.1:8888';
     
     /**
      * Manager

@@ -116,10 +116,19 @@ abstract class AbstractManager implements ManagerInterface
         $ch = \curl_init();
         
         // set url with resourse
-        \curl_setopt($ch, CURLOPT_URL, $this->endpoint.'/'.$resource);
+        $url = $this->endpoint.'/'.$resource;
+        if (!empty($params)) {
+            $url .= '?'.\http_build_query($params);
+        }
+        \curl_setopt($ch, CURLOPT_URL, $url);
 
         // set configurable curl options
         \curl_setopt_array($ch, $this->curlOptions);
+        
+        // set proxy
+        if(!empty($this->proxy)) {
+            curl_setopt($ch, CURLOPT_PROXY, $this->proxy);
+        }
         
         // get response string
         \curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

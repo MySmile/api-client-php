@@ -1,0 +1,138 @@
+html, body { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif; 
+    font-size: 12px;  
+}
+
+/*general*/
+header ul, footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    float: left;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #000;
+}
+
+h1 {
+    text-align: left;
+}
+
+a img {
+    border: none;
+}
+
+.clear { 
+    clear:both; 
+}
+
+/*carrier*/
+#carrier {
+    max-width: 274px; 
+    margin: 0 auto;
+    border: 1px solid #999999;
+}
+
+/*header*/
+nav {
+    padding: 10px 0;
+    background-color: #FDA132;
+}
+
+nav .active {
+    text-decoration: none;
+}
+
+#logo {
+    float: left;
+    padding: 5px;
+}
+
+#lang {
+    float: right;
+    margin: -30px 5px 0;
+}
+
+#lang li {
+    float: left;
+}
+
+#menu li {
+    padding: 5px 0 0 5px;
+}
+
+#contact {
+    float: right;
+    padding: 5px;
+}
+
+#contact li {
+    padding-bottom: 5px;
+}
+
+#contact img {
+    vertical-align: middle;
+    padding-right: 2px; 
+}
+
+/*article*/
+article {
+    padding: 5px;
+    text-align: justify;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    color: #888888;
+    font-size: 11px;
+}
+
+article img {
+    max-width: 265px;
+}
+
+article iframe {
+   max-width: 260px; 
+}
+
+.section {
+    border-bottom: 2px dotted #999999;
+    margin-bottom: 10px;
+}
+
+.section.buttom {
+    background-color: #E6E6E6;
+    padding: 5px;
+}
+
+.nav_top {
+    float: right;
+    margin-top: 5px;
+}
+
+/*footer*/
+footer {
+    padding: 5px;
+    background-color: #999999;
+    color: #FFFFFF;
+    font-size: 11px;
+}
+
+footer #copyright {
+    float: right;
+}

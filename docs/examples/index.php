@@ -29,7 +29,8 @@ $slug = getParam('slug', 'index');
 
 // init manager
 $endpoint = 'http://127.0.0.1:8000/api';
-$proxy    = 'http://127.0.0.1:8888';
+$proxy    = null;
+//$proxy    = 'http://127.0.0.1:8888';
 
 $manager = Manager::getInstance()
     ->setEndpoint($endpoint)

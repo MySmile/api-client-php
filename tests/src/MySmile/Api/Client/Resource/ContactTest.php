@@ -13,8 +13,8 @@ class ContactTest extends BaseTest
 {
     public function testGetData()
     {
-        $language = new Contact($this->manager);
-        $response = $language->getData();
+        $contact    = new Contact($this->manager);
+        $response   = $contact->getData();
         
         //        var_dump($response);
         $this->assertTrue(is_array($response));

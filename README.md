@@ -16,10 +16,10 @@ Manager initiate
 ----------------
 Before start of using MySmile REST API Client it is essential to configurate Manager:
 ```
-    $endpoint   = 'http://127.0.0.1:8000/api'; // please set your endpoint instead of localhost
+    $endpoint   = 'http://demo.mysmile.com.ua/api'; // please set your endpoint instead of demo
     $manager    = Manager::getInstance()
         ->setEndpoint($endpoint);
-``` 
+```  
 
 Language Resource
 -----------------

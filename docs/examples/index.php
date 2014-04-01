@@ -31,8 +31,12 @@ $lang = getParam('lang', 'en');
 $slug = getParam('slug', 'index');
 
 // init manager
-$endpoint = 'http://127.0.0.1:8000/api';
+// production
+$endpoint = 'http://demo.mysmile.com.ua/api';
 $proxy    = null;
+
+// development
+//$endpoint = 'http://127.0.0.1:8000/api'; 
 //$proxy    = 'http://127.0.0.1:8888';
 
 $manager = Manager::getInstance()

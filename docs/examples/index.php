@@ -5,6 +5,9 @@
  * Mobile version of MySmile
  * 
  * This script is illustrative therefore it contains mix of php and html, functions and objective paradigms
+ * 
+ * @link        https://github.com/MySmile/api-client-php
+ * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
 namespace MySmile;

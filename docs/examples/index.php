@@ -37,20 +37,20 @@ $proxy    = null;
 
 // development
 //$endpoint = 'http://127.0.0.1:8000/api'; 
-//$proxy    = 'http://127.0.0.1:8888';
+$proxy    = 'http://127.0.0.1:8888';
 
 $manager = Manager::getInstance()
     ->setEndpoint($endpoint)
     ->setProxy($proxy);
 try {
     // get lenguage
-    $language = getFromCache('language_'.$lang, $manager, 'Language');
+    $language = getFromCache('language', $manager, 'Language');
 
     // get menu
     $menu = getFromCache('menu_'.$lang, $manager, 'Content', array('lang' => $lang));
 
     // get contact
-    $contact = getFromCache('contact_'.$lang, $manager, 'Contact');
+    $contact = getFromCache('contact', $manager, 'Contact');
 
     // get content data
     $content = getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('lang' => $lang, 'slug' => $slug));

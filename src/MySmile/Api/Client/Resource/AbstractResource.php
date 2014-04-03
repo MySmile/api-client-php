@@ -8,15 +8,16 @@
 
 namespace MySmile\Api\Client\Resource;
 use MySmile\Api\Client\Manager;
+use MySmile\Api\Client\Exception;
 
 abstract class AbstractResource  implements ResourceInterface 
-{
+{   
     /**
-     * Default language
+     * Format
      * 
-     * @var string 
+     * @var string
      */
-    static public $language = 'en';
+    const FORMAT = 'json';
     
     /**
      * Http Manager
@@ -24,6 +25,22 @@ abstract class AbstractResource  implements ResourceInterface
      * @var MySmile\Api\Client\Manager 
      */
     protected $manager;
+    
+    /**
+     * Default params
+     *  
+     * @var type 
+     */
+    protected $params = array(
+        'format' => self::FORMAT
+    );
+    
+    /**
+     * Required params
+     * 
+     * @var array 
+     */
+    protected $requiredParams = array();
     
     /**
      * @param MySmile\Api\Client\Manager $manager
@@ -64,8 +81,28 @@ abstract class AbstractResource  implements ResourceInterface
      */
     public function getData(array $params = array())
     {
-        $param['lang'] = (isset($param['lang']))? $param['lang']: self::$language;
+        $params = \array_merge($this->params, $params);
+        $this->checkRequiredParams($params);
         
         return $this->manager->execute($this->resourceName, $params);
+    }
+    
+    /**
+     * Check required params
+     * 
+     * @throws MySmile\Api\Client\Exception
+     */
+    protected function checkRequiredParams(array $params) 
+    {        
+        $invalid = array();
+        foreach ($this->requiredParams as $item) {
+            if (empty($params[$item])) {
+                $invalid[] = $item;
+            }
+        }
+        
+        if (!empty($invalid)) {
+            throw new Exception('Error: required parameters not set or empty "'.\implode(', ', $invalid).'". Please set parameters and try again.');
+        }
     }
 }

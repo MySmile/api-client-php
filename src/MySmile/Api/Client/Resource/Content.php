@@ -10,5 +10,17 @@ namespace MySmile\Api\Client\Resource;
 
 class Content extends AbstractResource 
 {
+    /**
+     * Resource name
+     * 
+     * @var string 
+     */
     protected $resourceName = 'content';
+    
+    /**
+     * Required params
+     * 
+     * @var array 
+     */
+    protected $requiredParams = array('lang');
 }

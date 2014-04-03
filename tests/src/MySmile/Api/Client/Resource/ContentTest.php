@@ -41,7 +41,6 @@ class ContentTest extends BaseTest
     public function providerGetDataValid()
     {
         return array(
-            array(array()),
             array(array('lang' => 'uk')),
             array(array('lang' => 'uk', 'slug' => 'index'))
         );

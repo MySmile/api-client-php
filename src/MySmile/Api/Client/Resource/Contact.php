@@ -10,5 +10,10 @@ namespace MySmile\Api\Client\Resource;
 
 class Contact extends AbstractResource 
 {
+    /**
+     * Resource name
+     * 
+     * @var string 
+     */
     protected $resourceName = 'contact';
 }

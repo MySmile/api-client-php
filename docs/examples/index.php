@@ -37,7 +37,7 @@ $proxy    = null;
 
 // development
 //$endpoint = 'http://127.0.0.1:8000/api'; 
-$proxy    = 'http://127.0.0.1:8888';
+//$proxy    = 'http://127.0.0.1:8888';
 
 $manager = Manager::getInstance()
     ->setEndpoint($endpoint)
@@ -96,7 +96,6 @@ try {
                 
                 <nav>
                     <ul id="menu">
-                        <?php \ksort($menu['data']); ?>
                         <?php foreach ($menu['data'] as $item): ?>
                             <?php $key = key($item); $value = current($item); ?>
                             <li>

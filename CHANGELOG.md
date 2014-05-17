@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+v1.2.0 (2014-05-17)
+* Updated "content" resource accordingly changes in the Rest server
+* Changed example, proxy is turned off
+
 v1.1.0 (2014-04-03)
 -------------------
 * Added check to required data

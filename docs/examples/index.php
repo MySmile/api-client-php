@@ -26,7 +26,7 @@ require_once ('./library.php');
 // use session to cache language and menu list
 session_start();
 
-// prepere params
+// prepare params
 $lang = getParam('lang', 'en');
 $slug = getParam('slug', 'index');
 

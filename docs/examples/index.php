@@ -41,7 +41,11 @@ $proxy    = null;
 
 $manager = Manager::getInstance()
     ->setEndpoint($endpoint)
-    ->setProxy($proxy);
+    ->setProxy($proxy)
+    ->setCurlOptions(array(
+        CURLOPT_CONNECTTIMEOUT  => 15, // timeout on connect 
+        CURLOPT_TIMEOUT         => 15  // timeout on response 
+    ));
 try {
     // get lenguage
     $language = getFromCache('language', $manager, 'Language');

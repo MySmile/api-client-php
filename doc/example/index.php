@@ -10,44 +10,32 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-use MySmile\ApiClient\Manager;
-use MySmile\ApiClient\Exception;
-
 require_once ('./vendor/autoload.php');
 require_once ('./library.php');
+
+use MySmile\ApiClient\Manager;
 
 // use session to cache language and menu list
 session_start();
 
 // prepare params
-$lang = getParam('lang', 'en');
-$slug = getParam('slug', 'index');
+$lang = MySmile\getParam('lang', 'en');
+$slug = MySmile\getParam('slug', 'index');
 
 // init manager
-// production
 $endpoint = 'http://demo.mysmile.com.ua/api';
-$proxy    = null;
 
 $manager = Manager::getInstance()
-    ->setEndpoint($endpoint)
-    ->setProxy($proxy)
-    ->setCurlOptions(array(
-        CURLOPT_CONNECTTIMEOUT  => 15, // timeout on connect 
-        CURLOPT_TIMEOUT         => 15  // timeout on response 
-    ));
-try {
-    // get lenguage
-    $language = getFromCache('language', $manager, 'Language');
-    // get menu
-    $menu = getFromCache('menu_'.$lang, $manager, 'Content', array('lang' => $lang));
-    // get contact
-    $contact = getFromCache('contact', $manager, 'Contact');
-    // get content data
-    $content = getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('lang' => $lang, 'slug' => $slug));
-} catch (Exception $e) {
-    echo '500 Internal Server Error';
-    die;
-}
+    ->setEndpoint($endpoint);
+
+// get lenguage
+$language = MySmile\getFromCache('language', $manager, 'Language');
+// get menu
+$menu = MySmile\getFromCache('menu_'.$lang, $manager, 'Content', array('lang' => $lang));
+// get contact
+$contact = MySmile\getFromCache('contact', $manager, 'Contact');
+// get content data
+$content = MySmile\getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('lang' => $lang, 'slug' => $slug));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,8 +137,6 @@ try {
         <div id="copyright">© copyright 2012–<?php echo date('Y'); ?> </div>
         <div class="clear"></div>
     </footer>       
-</div> 
-    
+</div>     
 </body>
-</html>    
-    
+</html>

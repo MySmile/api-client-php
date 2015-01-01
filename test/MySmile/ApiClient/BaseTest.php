@@ -18,11 +18,11 @@ abstract class BaseTest extends PHPUnit_Framework_TestCase
     protected $endpoint = 'http://demo.mysmile.com.ua/api';
     
     /**
-     * Proxy
+     * Proxy e.g. 'http://127.0.0.1:8888';
      * 
      * @var string 
      */
-    protected $proxy = 'http://127.0.0.1:8888';
+    protected $proxy = null;
     
     /**
      * Manager

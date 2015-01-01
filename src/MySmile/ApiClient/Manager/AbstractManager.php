@@ -56,14 +56,7 @@ abstract class AbstractManager implements ManagerInterface
     protected function __clone() 
     {
     }
-    
-    /**
-     * Gets current instance
-     * 
-     * @return self
-     */
-    abstract static public function getInstance();
-    
+        
     /**
      * Sets  Endpoint
      * 

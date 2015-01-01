@@ -1,8 +1,9 @@
 CHANGELOG
 =========
-v1.3.0 (2015-01-xx)
+v1.3.0 (2015-01-01)
 * Added composer
-* Integrate Travis-CI
+* Integrated Travis-CI
+* Updated documentation and example
 
 v1.2.0 (2014-05-17)
 * Updated "content" resource accordingly changes in the Rest server

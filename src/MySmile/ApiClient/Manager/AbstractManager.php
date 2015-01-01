@@ -6,8 +6,8 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-namespace MySmile\Api\Client\Manager;
-use MySmile\Api\Client\Exception;
+namespace MySmile\ApiClient\Manager;
+use MySmile\ApiClient\Exception;
 
 abstract class AbstractManager implements ManagerInterface
 {
@@ -114,17 +114,17 @@ abstract class AbstractManager implements ManagerInterface
     public function execute($resource, array $params)
     {
         // create curl resource
-        $ch = \curl_init();
+        $ch = curl_init();
         
         // set url with resourse
         $url = $this->endpoint.'/'.$resource;
         if (!empty($params)) {
-            $url .= '?'.\http_build_query($params);
+            $url .= '?' . http_build_query($params);
         }
-        \curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_URL, $url);
 
         // set configurable curl options
-        \curl_setopt_array($ch, $this->curlOptions);
+        curl_setopt_array($ch, $this->curlOptions);
         
         // set proxy
         if(!empty($this->proxy)) {
@@ -132,18 +132,18 @@ abstract class AbstractManager implements ManagerInterface
         }
         
         // get response string
-        \curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         
         // get response
         $this->raw = curl_exec($ch);
                 
         // handle curl errors
-        if(\curl_errno($ch) !== 0) {
+        if(curl_errno($ch) !== 0) {
             throw new Exception('Curl error ['.\curl_error($ch).']', 500);
         }
         
         // close curl
-        \curl_close($ch); 
+        curl_close($ch); 
         
         // response
         $response = json_decode($this->raw, true);

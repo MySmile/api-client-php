@@ -6,9 +6,9 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-namespace MySmile\Api\Client\Resource;
-use MySmile\Api\Client\Manager;
-use MySmile\Api\Client\Exception;
+namespace MySmile\ApiClient\Resource;
+use MySmile\ApiClient\Manager;
+use MySmile\ApiClient\Exception;
 
 abstract class AbstractResource  implements ResourceInterface 
 {   
@@ -22,7 +22,7 @@ abstract class AbstractResource  implements ResourceInterface
     /**
      * Http Manager
      * 
-     * @var MySmile\Api\Client\Manager 
+     * @var MySmile\ApiClient\Manager 
      */
     protected $manager;
     
@@ -43,7 +43,7 @@ abstract class AbstractResource  implements ResourceInterface
     protected $requiredParams = array();
     
     /**
-     * @param MySmile\Api\Client\Manager $manager
+     * @param MySmile\ApiClient\Manager $manager
      */
     public function __construct(Manager $manager) 
     {
@@ -53,7 +53,7 @@ abstract class AbstractResource  implements ResourceInterface
     /**
      * Sets Manager
      * 
-     * @param MySmile\Api\Client\Manager $manager
+     * @param MySmile\ApiClient\Manager $manager
      * @return self
      */
     public function setManager(Manager $manager)
@@ -66,7 +66,7 @@ abstract class AbstractResource  implements ResourceInterface
     /**
      * Gets Manager
      * 
-     * @return MySmile\Api\Client\Manager
+     * @return MySmile\ApiClient\Manager
      */
     public function getManager()
     {
@@ -81,7 +81,7 @@ abstract class AbstractResource  implements ResourceInterface
      */
     public function getData(array $params = array())
     {
-        $params = \array_merge($this->params, $params);
+        $params = array_merge($this->params, $params);
         $this->checkRequiredParams($params);
         
         return $this->manager->execute($this->resourceName, $params);
@@ -90,7 +90,7 @@ abstract class AbstractResource  implements ResourceInterface
     /**
      * Check required params
      * 
-     * @throws MySmile\Api\Client\Exception
+     * @throws MySmile\ApiClient\Exception
      */
     protected function checkRequiredParams(array $params) 
     {        

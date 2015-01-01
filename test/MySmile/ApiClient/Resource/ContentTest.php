@@ -6,9 +6,7 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-namespace MySmile\Api\Client\Resource;
-use MySmile\BaseTest;
-use MySmile\Api\Client\Resource\Content;
+use MySmile\ApiClient\Resource\Content;
 
 class ContentTest extends BaseTest
 {
@@ -21,13 +19,12 @@ class ContentTest extends BaseTest
         $content    = new Content($this->manager);
         $response   = $content->getData($params);
         
-//        var_dump($response);
         $this->assertTrue(is_array($response));
         $this->assertEquals(200, $response['code']);
     }
     
     /**
-     * @expectedException \MySmile\Api\Client\Exception
+     * @expectedException \MySmile\ApiClient\Exception
      * @expectedExceptionCode 404
      * @dataProvider providerGetDataInValid
      * @param array $params

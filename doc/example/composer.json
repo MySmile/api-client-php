@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mysmile/apiclient": "dev-master"
+    }
+}

@@ -1,69 +1,80 @@
 MySmile API REST Client
 =======================
 
-Objective
----------
-This project provides Client for MySmile REST API.
+Rest api client Client for MySmile CMS.
 
-Examples
---------
-  * Example can be found in ``/docs/examples``.
-  * unitTests can be found here ``/tests/src/MySmile/Api/Client``
-  * For more information about MySmile REST API please look into MySmile documentation.
+Requirements
+------------
+* PHP 5.3+
+* Curl
 
+Installation
+------------
+The best way to install MySmile Api Client is use composer:
 
-Manager initiate
-----------------
-Before start of using MySmile REST API Client it is essential to configurate Manager:
+1. Update your `composer.json`
+
+```json
+{
+    "require": {
+        "mysmile/apiclient": "dev-master"
+    }
+}
 ```
+
+2. Run `composer update`
+
+Usage
+-----
+
+### Manager configuration
+``` php
     $endpoint   = 'http://demo.mysmile.com.ua/api'; // please set your endpoint instead of demo
     $manager    = Manager::getInstance()
         ->setEndpoint($endpoint);
 ```  
 
-Language Resource
------------------
-To get list of available languages it is need:
-```
-    $language = new Language($manager);
-    $response = $language->getData();
-``` 
-
-Contact Resource
------------------
-To get contacts:
-```
-    $contact    = new Contact($manager);
-    $response   = $contact->getData();
-``` 
-
-Content Resource
-----------------
-For construction menu it is need to send those request:
-```
-   $params     = array('lang' => 'en');// list of available languages can be get using Language Resource 
-   $content    = new Content($manager);
-   $response   = $content->getData($params);
-``` 
-
-To get page by slug: 
-```
-   $params     = array('lang' => 'en', 'slug' => 'index'); // how to get list of available slugs is presented in the example above
-   $content    = new Content($manager);
-   $response   = $content->getData($params);
-``` 
-
-Set Proxy
----------
-It is helpful to see request/response using proxy. Code bellow show how to set proxy to Manager
+For developing purpose it's possible to configure proxy:
 ```
     $proxy   = 'http://127.0.0.1:8888';
     $manager = Manager::getInstance()
         ->setProxy();
 ```
 
-Requirement
------------
-  * PHP 5.3
-  * Apache
-  * phpUnit for unit tests 
+### Get language list
+``` php
+    $language = new Language($manager);
+    $response = $language->getData();
+``` 
+
+### Get contact
+``` php
+    $contact    = new Contact($manager);
+    $response   = $contact->getData();
+``` 
+
+### Get content list
+--------------------
+``` php
+   $params     = array('lang' => 'en');// list of available languages can be get using Language Resource 
+   $content    = new Content($manager);
+   $response   = $content->getData($params);
+``` 
+
+### Get content by slug 
+``` php
+   $params     = array('lang' => 'en', 'slug' => 'index'); // how to get list of available slugs is presented in the example above
+   $content    = new Content($manager);
+   $response   = $content->getData($params);
+``` 
+
+Example
+-------
+Mobile version of MySmile that is based on MySmile Api Client can be found here ``/doc/example``.
+
+### Installation
+Run ``composer update`` in ``/doc/example``
+
+License
+-------
+BSD-3-Clause

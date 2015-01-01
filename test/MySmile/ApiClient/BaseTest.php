@@ -6,17 +6,16 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-namespace MySmile;
-use MySmile\Api\Client\Manager;
+use MySmile\ApiClient\Manager;
 
-class BaseTest extends \PHPUnit_Framework_TestCase 
+abstract class BaseTest extends PHPUnit_Framework_TestCase 
 {
     /**
      * Endpoint
      *
      * @var string
      */
-    protected $endpoint = 'http://127.0.0.1:8000/api';
+    protected $endpoint = 'http://demo.mysmile.com.ua/api';
     
     /**
      * Proxy
@@ -39,7 +38,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->manager = Manager::getInstance()
-                ->setEndpoint($this->endpoint)
-                ->setProxy($this->proxy);
+            ->setEndpoint($this->endpoint)
+            ->setProxy($this->proxy);
     }
 }

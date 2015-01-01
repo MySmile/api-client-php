@@ -6,7 +6,7 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-namespace MySmile\Api\Client;
+namespace MySmile\ApiClient;
 
 class Exception extends \Exception
 {

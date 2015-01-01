@@ -6,20 +6,22 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
+namespace MySmile;
+
 /**
  * Gets data from cache
  * 
  * @param string                        $key
- * @param MySmile\ApiClient\Manager     $manager
+ * @param \MySmile\ApiClient\Manager     $manager
  * @param string                        $resource_name
  * @param array                         $params
  * @return array
  */
-function getFromCache($key, MySmile\ApiClient\Manager $manager, $resource_name, array $params = array())
+function getFromCache($key, \MySmile\ApiClient\Manager $manager, $resource_name, array $params = array())
 {
     $result = (isset($_SESSION[$key]))? $_SESSION[$key]: false;
     if ($result === false) {
-        $resource_name  = 'MySmile\ApiClient\Resource\\' . $resource_name;
+        $resource_name  = '\MySmile\ApiClient\Resource\\' . $resource_name;
         $resource       = new $resource_name($manager);
         $result         = $resource->getData($params);
            

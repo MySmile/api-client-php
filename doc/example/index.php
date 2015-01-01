@@ -14,14 +14,13 @@ require_once ('./vendor/autoload.php');
 require_once ('./library.php');
 
 use MySmile\ApiClient\Manager;
-use MySmile\ApiClient\Exception;
 
 // use session to cache language and menu list
 session_start();
 
 // prepare params
-$lang = getParam('lang', 'en');
-$slug = getParam('slug', 'index');
+$lang = MySmile\getParam('lang', 'en');
+$slug = MySmile\getParam('slug', 'index');
 
 // init manager
 $endpoint = 'http://demo.mysmile.com.ua/api';
@@ -30,13 +29,13 @@ $manager = Manager::getInstance()
     ->setEndpoint($endpoint);
 
 // get lenguage
-$language = getFromCache('language', $manager, 'Language');
+$language = MySmile\getFromCache('language', $manager, 'Language');
 // get menu
-$menu = getFromCache('menu_'.$lang, $manager, 'Content', array('lang' => $lang));
+$menu = MySmile\getFromCache('menu_'.$lang, $manager, 'Content', array('lang' => $lang));
 // get contact
-$contact = getFromCache('contact', $manager, 'Contact');
+$contact = MySmile\getFromCache('contact', $manager, 'Contact');
 // get content data
-$content = getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('lang' => $lang, 'slug' => $slug));
+$content = MySmile\getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('lang' => $lang, 'slug' => $slug));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +137,6 @@ $content = getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('
         <div id="copyright">© copyright 2012–<?php echo date('Y'); ?> </div>
         <div class="clear"></div>
     </footer>       
-</div> 
-    
+</div>     
 </body>
-</html>  
+</html>

@@ -1,5 +1,5 @@
 {
-    "name": "mysmile/ApiClient",
+    "name": "mysmile/apiclient",
     "description": "Rest api client for MySmile CMS",
     "keywords": ["rest api client"],
     "license": "BSD-3-Clause",

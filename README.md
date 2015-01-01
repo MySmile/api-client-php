@@ -1,6 +1,11 @@
 MySmile API REST Client
 =======================
 
+[![Latest Stable Version](https://poser.pugx.org/mysmile/apiclient/v/stable.svg)](https://packagist.org/packages/mysmile/apiclient)
+[![License](https://poser.pugx.org/mysmile/apiclient/license.svg)](https://packagist.org/packages/mysmile/apiclient)
+[![Build Status](https://travis-ci.org/mysmile/api-client-php.svg?branch=master)](https://travis-ci.org/mysmile/api-client-php)
+
+
 Rest api client Client for MySmile CMS.
 
 Requirements

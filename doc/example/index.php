@@ -28,19 +28,15 @@ $endpoint = 'http://demo.mysmile.com.ua/api';
 
 $manager = Manager::getInstance()
     ->setEndpoint($endpoint);
-try {  
-    // get lenguage
-    $language = getFromCache('language', $manager, 'Language');
-    // get menu
-    $menu = getFromCache('menu_'.$lang, $manager, 'Content', array('lang' => $lang));
-    // get contact
-    $contact = getFromCache('contact', $manager, 'Contact');
-    // get content data
-    $content = getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('lang' => $lang, 'slug' => $slug));
-} catch (Exception $e) {
-    echo '500 Internal Server Error';
-    die;
-}
+
+// get lenguage
+$language = getFromCache('language', $manager, 'Language');
+// get menu
+$menu = getFromCache('menu_'.$lang, $manager, 'Content', array('lang' => $lang));
+// get contact
+$contact = getFromCache('contact', $manager, 'Contact');
+// get content data
+$content = getFromCache('content_'.$lang.'_'.$slug, $manager, 'Content', array('lang' => $lang, 'slug' => $slug));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,5 +141,4 @@ try {
 </div> 
     
 </body>
-</html>    
-    
+</html>  

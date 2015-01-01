@@ -3,17 +3,6 @@ vendor/
 composer.lock
 composer.phar
 
-# phpstorm
-.idea
-
-# zend studio
-.buildpath
-.project
-.settings
-
-# netbeans
-nbproject
-
 # ArgoUML temp files
 *.*~
 

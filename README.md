@@ -73,7 +73,7 @@ Example
 Mobile version of MySmile that is based on MySmile Api Client can be found here ``/doc/example``.
 
 ### Installation
-Run ``composer update`` in ``/doc/example``
+Run ``composer update`` in ``/doc/example``.
 
 License
 -------

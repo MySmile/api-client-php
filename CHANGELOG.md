@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+v1.3.0 (2015-01-xx)
+* Added composer
+* Integrate Travis-CI
+
 v1.2.0 (2014-05-17)
 * Updated "content" resource accordingly changes in the Rest server
 * Changed example, proxy is turned off

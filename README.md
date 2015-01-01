@@ -4,6 +4,7 @@ MySmile API REST Client
 [![Latest Stable Version](https://poser.pugx.org/mysmile/apiclient/v/stable.svg)](https://packagist.org/packages/mysmile/apiclient)
 [![License](https://poser.pugx.org/mysmile/apiclient/license.svg)](https://packagist.org/packages/mysmile/apiclient)
 [![Build Status](https://travis-ci.org/MySmile/api-client-php.svg)](https://travis-ci.org/MySmile/api-client-php)
+[![Coverage Status](https://coveralls.io/repos/MySmile/api-client-php/badge.png)](https://coveralls.io/r/MySmile/api-client-php)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2f1a7b84-3a25-4d0f-917c-31bc847a8be1/mini.png)](https://insight.sensiolabs.com/projects/2f1a7b84-3a25-4d0f-917c-31bc847a8be1)
 
 Rest api client Client for MySmile CMS.

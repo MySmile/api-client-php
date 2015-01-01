@@ -10,11 +10,11 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-use MySmile\ApiClient\Manager;
-use MySmile\ApiClient\Exception;
-
 require_once ('./vendor/autoload.php');
 require_once ('./library.php');
+
+use MySmile\ApiClient\Manager;
+use MySmile\ApiClient\Exception;
 
 // use session to cache language and menu list
 session_start();
@@ -24,18 +24,11 @@ $lang = getParam('lang', 'en');
 $slug = getParam('slug', 'index');
 
 // init manager
-// production
 $endpoint = 'http://demo.mysmile.com.ua/api';
-$proxy    = null;
 
 $manager = Manager::getInstance()
-    ->setEndpoint($endpoint)
-    ->setProxy($proxy)
-    ->setCurlOptions(array(
-        CURLOPT_CONNECTTIMEOUT  => 15, // timeout on connect 
-        CURLOPT_TIMEOUT         => 15  // timeout on response 
-    ));
-try {
+    ->setEndpoint($endpoint);
+try {  
     // get lenguage
     $language = getFromCache('language', $manager, 'Language');
     // get menu
